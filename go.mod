@@ -30,4 +30,4 @@ require (
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
 
-retract [v0.0.1, v0.0.3]
+retract [v0.0.1, v0.0.4]
