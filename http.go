@@ -2,6 +2,7 @@ package myUtils
 
 import (
 	"bytes"
+	"log"
 	"net"
 	"net/http"
 	"net/url"
@@ -17,7 +18,7 @@ var (
 	client *resty.Client
 )
 
-func InitHttpClient(conf *viper.Viper, log *Logger) {
+func InitHttpClient(conf *viper.Viper) {
 	client = resty.New()
 	client.SetDebug(conf.GetString("env") != "prod")
 	client.SetTimeout(time.Duration(conf.GetInt("http.timeout")) * time.Second)
@@ -38,7 +39,7 @@ func InitHttpClient(conf *viper.Viper, log *Logger) {
 			)
 	}
 
-	log.Info("http client init done")
+	log.Print("http client init done")
 }
 
 func SendBotMessage(url, msg string) (bool, error) {

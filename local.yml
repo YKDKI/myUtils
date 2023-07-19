@@ -1,9 +1,10 @@
-env: local
+env: local          #local prod
 http:
-  timeout: 20,      #超时时间
-  retry: true,      #重发
-    count: 3,       #重发次数
-    waittime: 300,  #重发间隔
+  timeout: 20       #超时时间
+  retry: true       #重发
+http.retry:
+  count: 3          #重发次数
+  waittime: 300     #重发间隔
 log:
   log_level: debug
   encoding: console           # json or console

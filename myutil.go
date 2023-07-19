@@ -6,6 +6,6 @@ import "github.com/spf13/viper"
 func New() (config *viper.Viper, log *Logger) {
 	config = NewConfig()
 	log = NewLog(config)
-	InitHttpClient(config, log)
+	InitHttpClient(config)
 	return
 }
