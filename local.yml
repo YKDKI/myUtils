@@ -1,0 +1,14 @@
+env: local
+http:
+  timeout: 20,      #超时时间
+  retry: true,      #重发
+    count: 3,       #重发次数
+    waittime: 300,  #重发间隔
+log:
+  log_level: debug
+  encoding: console           # json or console
+  log_file_name: "./storage/logs/server.log"
+  max_backups: 30              # 日志文件最多保存多少个备份
+  max_age: 30                  #  文件最多保存多少天
+  max_size: 10240              #  每个日志文件保存的最大尺寸 单位：M
+  compress: true               # 是否压缩
